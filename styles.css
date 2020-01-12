@@ -1,0 +1,105 @@
+/* Navbar styles */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+/* Index page styles */
+
+.nav-items-right {
+  text-align: right;
+  display: inline;
+}
+
+.title {
+  font-family: courier;
+  text-align: center;
+}
+
+.log-status {
+  text-align: center;
+}
+
+.footer-segment {
+  font-family: courier;
+  text-align: center;
+}
+
+body {
+  background-color: lightgrey;
+}
+
+.signup-page-wrapper {
+  background-color: lightgrey;
+  font-family: courier;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-signup-page {
+  border-radius: 5px;
+  background-color: grey;
+  padding: 12px 20px;
+}
+
+input [type=text]:focus {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input [type=password]:focus {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input [type=email]:focus {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: orange;
+  color: black;
+  border: 2px solid black
+}
+
+label {
+  color: black;
+  width: 100%;
+  padding: 20px 20px;
+  margin: 8px 0;
+}
