@@ -38,7 +38,7 @@ if (isset($_POST['signup-submit'])) {
       $sql = "SELECT uidUsers FROM users WHERE uidUsers=?";
       $stmt = mysqli_stmt_init($conn);
 
-      if (!sqli_stmt_prepare($stmt. $sql)) {
+      if (!mysqli_stmt_prepare($stmt. $sql)) {
         // code...
         header("Location: ../signup.php?error=sqlerror");
         exit();
@@ -48,7 +48,7 @@ if (isset($_POST['signup-submit'])) {
         mysqli_stmt_bind_param($stmt, "s", $username);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_store_result($stmt);
-        $resultCheck = mysqli_stmt_num_rows($stmt);
+        $resultCheck = mysqli_stmt_store_result($stmt);
 
         if ($resultCheck > 0) {
           // code...
