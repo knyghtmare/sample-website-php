@@ -5,7 +5,17 @@ if (isset($_POST['login-submit'])) {
   require 'dbh.inc.php';
 
   $emailID = $_POST['mailID'];
-  $userPWD = $_POST['pwd'];
+  $password = $_POST['pwd'];
+
+  if (empty($emailID) || empty($password)) {
+    // code...
+    header("Location: ../index.php?error=emptyfields");
+    exit();
+  }
+  else {
+    // code...
+    $sql = 
+  }
 }
 else {
   // code...
