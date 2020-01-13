@@ -17,7 +17,7 @@ if (isset($_POST['login-submit'])) {
     $sql = "SELECT * FROM users WHERE uidUsers=? OR emailUsers=?;";
     $stmt = mysqli_stmt_init($conn);
 
-    if (!sqli_stmt_prepare($stmt. $sql)) {
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
       // code...
       header("Location: ../index.php?error=sqlerror");
       exit();
