@@ -23,9 +23,9 @@
               <div class="navbar-items-right">
                   <div class="navbar-item-right">
                       <form class="login-wrapper" action="includes/login.inc.php" method="post">
-                          <label for="user_name_email">Username/Email:</label>
+                          <label for="user_name_email">Username/Email:</label><br>
                           <input type="text" name="mailID" placeholder="username or email">
-                          <label for="user_password">Password:</label>
+                          <label for="user_password">Password:</label><br>
                           <input type="password" name="pwd" placeholder="password">
                           <button type="submit" name="login-submit">Log-in</button>
                       </form>
