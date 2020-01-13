@@ -14,7 +14,7 @@ if (isset($_POST['login-submit'])) {
   }
   else {
     // code...
-    $sql = 
+    $sql = "SELECT * FROM users WHERE uidUsers=? OR emailUsers=?;";
   }
 }
 else {
