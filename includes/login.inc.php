@@ -28,6 +28,35 @@ if (isset($_POST['login-submit'])) {
       mysqli_stmt_execute($stmt);
 
       $result = mysqli_stmt_get_result($stmt);
+
+      if ($row = mysqli_fetch_assoc()) {
+        // code...
+        $pwdCheck = password_verify($password, $row['pwdUsers']);
+        if ($pwdCheck == false) {
+          // code...
+          header("Location: ../index.php?error=wrongpwd");
+          exit();
+        }
+        elseif ($pwdCheck == true) {
+          // code...
+          session_start();
+          $_SESSION['userId'] = $row['idUsers'];
+          $_SESSION['userUId'] = $row['uidUsers'];
+
+          header("Location: ../index.php?login=success");
+          exit();
+        }
+        else {
+          // code...
+          header("Location: ../index.php?error=wrongpwd");
+          exit();
+        }
+      }
+      else {
+        // code...
+        header("Location: ../index.php?error=nouser");
+        exit();
+      }
     }
   }
 }
