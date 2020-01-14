@@ -3,6 +3,36 @@
 <main>
     <div class="signup-page-wrapper">
         <h3>Sign-Up!</h3>
+        <?php
+            // add code here
+
+            if (isset($_GET['error'])) {
+              if ($_GET['error'] == 'emptyfields') {
+                // code...
+                echo '<p class="signuperror">Fill in all fields!</p>';
+              }
+              elseif ($_GET['error'] == 'invalidmailuid') {
+                // code...
+                echo '<p class="signuperror">Invalid username and email</p>';
+              }
+              elseif ($_GET['error'] == 'invaliduid') {
+                // code...
+                echo '<p class="signuperror">Invalid username</p>';
+              }
+              elseif ($_GET['error'] == 'invalidmail') {
+                // code...
+                echo '<p class="signuperror">Invalid email</p>';
+              }
+              elseif ($_GET['error'] == 'passwordcheck') {
+                // code...
+                echo '<p class="signuperror">Your passwords do not match!</p>';
+              }
+              elseif ($_GET['error'] == 'usertaken') {
+                // code...
+                echo '<p class="signuperror">Username has been already taken!</p>';
+              }
+            }
+         ?>
         <form class="form-signup-page" action="includes/signup.inc.php" method="post">
             <label for="user_name">Username:</label><br>
             <input type="text" name="usr_name" placeholder="Username"><br>
