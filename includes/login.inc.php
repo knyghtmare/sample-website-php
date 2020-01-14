@@ -4,7 +4,7 @@ if (isset($_POST['login-submit'])) {
   // code...
   require 'dbh.inc.php';
 
-  $emailID = $_POST['mailID'];
+  $usernameID = $_POST['mailUid'];
   $password = $_POST['pwd'];
 
   if (empty($emailID) || empty($password)) {
@@ -24,7 +24,7 @@ if (isset($_POST['login-submit'])) {
     }
     else {
       // code...
-      mysqli_stmt_bind_param($stmt, "ss", $emailID, $password);
+      mysqli_stmt_bind_param($stmt, "ss", $usernameID, $password);
       mysqli_stmt_execute($stmt);
 
       $result = mysqli_stmt_get_result($stmt);
