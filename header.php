@@ -25,21 +25,25 @@
               </div>
               <div class="navbar-items-right">
                   <div class="navbar-item-right">
-                      <form class="login-wrapper" action="includes/login.inc.php" method="post">
-                          <label for="user_name">Username:</label><br>
-                          <input type="text" name="mailUid" placeholder="username">
-                          <label for="user_password">Password:</label><br>
-                          <input type="password" name="pwd" placeholder="password">
-                          <button type="submit" name="login-submit">Log-in</button>
-                      </form>
-                  </div>
-                  <div class="navbar-item-right">
-                      <a href="signup.php">Sign Up</a>
-                  </div>
-                  <div class="navbar-item-right">
-                    <form class="login-wrapper" action="includes/logout.php" method="post">
-                        <button type="submit" name="logout-submit">Log-Out</button>
-                    </form>
+                      <?php
+                            if (isset($_SESSION['userId'])) {
+                              // code...
+                              echo '<form class="login-wrapper" action="includes/logout.inc.php" method="post">
+                                  <button type="submit" name="logout-submit">Log-Out</button>
+                              </form>';
+                            }
+                            else {
+                              // code...
+                              echo '<form class="login-wrapper" action="includes/login.inc.php" method="post">
+                                  <label for="user_name">Username:</label><br>
+                                  <input type="text" name="mailUid" placeholder="username">
+                                  <label for="user_password">Password:</label><br>
+                                  <input type="password" name="pwd" placeholder="password">
+                                  <button type="submit" name="login-submit">Log-in</button>
+                              </form>
+                              <a href="signup.php">Sign Up</a>';
+                            }
+                      ?>
                   </div>
               </div>
               <hr>
